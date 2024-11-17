@@ -7,9 +7,9 @@ const NavBar = () => {
     const links = (
         <>
             <NavLink to='/' >Home</NavLink>
-            <NavLink to='/' >Donation Campaigns</NavLink>
-            <NavLink to='/' >How to Help</NavLink>
-            <NavLink to='/' >Dashboard</NavLink>
+            <NavLink to='/donation' >Donation Campaigns</NavLink>
+            <NavLink to='/help' >How to Help</NavLink>
+            <NavLink to='/dashboard' >Dashboard</NavLink>
         </>
     );
 // #E74C3C
@@ -46,7 +46,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn md:px-10 ">Login</a>
+                <a className="btn md:px-10 bg-[#E74C3C] border-none text-white">Login</a>
             </div>
         </div>
         </div>
