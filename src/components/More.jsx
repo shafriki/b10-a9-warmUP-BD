@@ -24,7 +24,7 @@ const More = () => {
 
         {/* card one */}
         <div className="card card-compact bg-blue-50 shadow-xl rounded-none"
-          data-aos="fade-left">
+          data-aos="fade-up">
           <figure>
             <img src="https://i.ibb.co.com/WDTT4Zd/health.webp"
               alt="Health and Wellbeing" />
@@ -52,7 +52,7 @@ const More = () => {
         {/* card two */}
         <div
           className="card card-compact bg-blue-50 shadow-xl rounded-none"
-          data-aos="fade-left"
+          data-aos="fade-up"
         >
           <figure>
             <img src="https://i.ibb.co.com/7R4yw46/water.webp"
@@ -80,7 +80,7 @@ const More = () => {
         {/* card three */}
         <div
           className="card card-compact bg-blue-50 shadow-xl rounded-none"
-          data-aos="fade-left">
+          data-aos="fade-up">
           <figure>
             <img src="https://i.ibb.co.com/M6ZVvx5/disability.webp"
               alt="Disability Support"/>

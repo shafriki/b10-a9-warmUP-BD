@@ -38,7 +38,7 @@ const AboutContent = () => {
 
             {/* about count */}
             <div className="stats stats-horizontal md:stats-vertical shadow-none text-[#34495E]"
-                data-aos="fade-left" data-aos-delay="200">
+                data-aos="fade-up" data-aos-delay="200">
 
                 <div className="stat" data-aos="zoom-in" data-aos-delay="300">
                     <div className="stat-value">100+</div>

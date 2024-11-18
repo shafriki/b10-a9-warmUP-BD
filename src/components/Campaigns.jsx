@@ -36,7 +36,7 @@ const Campaigns = () => {
             : descriptionWords.slice(0, 9).join(" ");
 
           return (
-            <div key={campaign.id} className="border-none rounded-lg shadow-xl bg-blue-50" data-aos="fade-right">
+            <div key={campaign.id} className="border-none rounded-lg shadow-xl bg-blue-50" data-aos="fade-up">
               <img src={campaign.image} alt="" className="w-full object-cover rounded-t-lg"/>
 
               <h3 className="text-xl font-semibold mt-4 px-4">

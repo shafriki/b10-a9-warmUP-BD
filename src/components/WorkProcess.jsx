@@ -20,7 +20,7 @@ const WorkProcess = () => {
         data-aos-delay="400">
 
         {/* text content */}
-        <div className="md:col-span-2 mx-3 md:mx-0" data-aos="fade-right"
+        <div className="md:col-span-2 mx-3 md:mx-0" data-aos="fade-up"
           data-aos-delay="600" >
 
           <ul className="steps steps-vertical">
@@ -49,7 +49,7 @@ const WorkProcess = () => {
 
         {/* image content */}
         <div className="md:col-span-1 grid grid-cols-2 gap-4 mx-5 md:mx-0"
-          data-aos="fade-left" data-aos-delay="600">
+          data-aos="fade-up" data-aos-delay="600">
           <img src="https://i.ibb.co.com/yW5nL5T/m1.jpg" alt="Image 1"
             className="w-full h-48 object-cover" data-aos="zoom-in" data-aos-delay="700"/>
 
@@ -71,7 +71,7 @@ const WorkProcess = () => {
           data-aos="zoom-in" >
           {["Rajshahi", "Dhaka", "Barisal", "Chattagram", "Khulna"].map(
             (location, index) => (
-              <div key={index} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg" data-aos="flip-left"
+              <div key={index} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg" data-aos="fade-up"
                 data-aos-delay={600 + index * 100} >
                 <img src={
                     index === 0

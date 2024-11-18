@@ -17,9 +17,9 @@ const Donate = () => {
       <div className="bg-black/70 w-full h-full absolute top-0 left-0" data-aos="fade" data-aos-delay="100"></div>
 
       {/* text content */}
-      <div className="relative max-w-7xl mx-auto py-16 px-6 text-left" data-aos="fade-right" data-aos-delay="200"> <h6 className="text-green-500 font-bold text-lg" data-aos="fade-up" data-aos-delay="300" >Your Generosity, Their Warmth</h6>
+      <div className="relative max-w-7xl mx-auto py-16 px-6 text-left" data-aos="fade-up" data-aos-delay="200"> <h6 className="text-green-500 font-bold text-lg" data-aos="fade-up" data-aos-delay="300" >Your Generosity, Their Warmth</h6>
 
-        <h1 className="font-bold text-lg md:text-4xl mt-2 md:mt-4" data-aos="fade-left" data-aos-delay="400"> Contribute to WarmUp Bangladesh: The Best Charity to Donate Clothes </h1>
+        <h1 className="font-bold text-lg md:text-4xl mt-2 md:mt-4" data-aos="fade-up" data-aos-delay="400"> Contribute to WarmUp Bangladesh: The Best Charity to Donate Clothes </h1>
 
         <p className="mt-2 md:mt-6 text-xs md:text-base text-justify leading-relaxed max-w-3xl" data-aos="zoom-in" data-aos-delay="500">
           Your donation to WarmUp Bangladesh Winter Special program is a lifeline for many.
