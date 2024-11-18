@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Donation = () => {
+
+    useEffect(() => {
+        document.title = "Donation | WarmUP Bangladesh";
+    }, []);
+
     return (
         <div>
             donation

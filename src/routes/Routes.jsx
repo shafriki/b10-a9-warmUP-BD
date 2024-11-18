@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import ErrorPage from "../pages/ErrorPage";
 import MainLayout from "../layouts/MainLayout";
 import Home from '../pages/Home'
@@ -13,8 +13,12 @@ const Routes = createBrowserRouter([
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
-                path:'/',
-                element: <Home></Home>,
+                index: true,  
+                element: <Navigate to="/home" replace />,
+            },
+            {
+                path: '/home',
+                element: <Home></Home>
             },
             {
                 path:'/donation',

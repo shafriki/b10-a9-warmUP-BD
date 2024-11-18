@@ -3,8 +3,8 @@ import Marquee from 'react-fast-marquee';
 
 const Payment = () => {
     return (
-        <div className="max-w-screen-xl mx-auto my-10">
-            <h1 className='text-center text-2xl md:text-4xl font-bold text-[#34495E] mb-5'>Payment With</h1>
+        <div className="max-w-screen-xl mx-auto my-20">
+            <h1 className='text-center text-2xl md:text-4xl font-bold text-[#34495E] mb-8'>Payment With</h1>
             <div className="flex items-center">
                 <Marquee pauseOnHover='ture' className='cursor-pointer'>
                 <div className="h-16 md:h-28 w-full mr-5">
