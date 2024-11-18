@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Campaigns from '../components/Campaigns';
 
 const Donation = () => {
 
@@ -8,7 +9,7 @@ const Donation = () => {
 
     return (
         <div>
-            donation
+            <Campaigns></Campaigns>
         </div>
     );
 };
