@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'; // Import NavLink
-import logo from '../assets/icon.png'
+import logo from '../assets/icon.png';
 
 const NavBar = () => {
 
@@ -12,10 +12,11 @@ const NavBar = () => {
             <NavLink to='/dashboard' >Dashboard</NavLink>
         </>
     );
-// #E74C3C
     return (
-        <div className='bg-[#34495E] text-[#ECF0F1]'>
+        <div className='bg-[#34495E] text-[#ECF0F1] py-1 sticky top-0 z-50 backdrop-blur opacity-90'>
+
             <div className="navbar  max-w-screen-xl mx-auto ">
+
             <div className="navbar-start ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,6 +32,7 @@ const NavBar = () => {
                                 strokeWidth="2"
                                 d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
+                        
                     </div>
                     <ul
                         tabIndex={0}

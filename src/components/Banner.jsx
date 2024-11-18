@@ -6,7 +6,7 @@ import bannerthree from '../assets/banner-3.png';
 const Banner = () => {
     return (
         <div className="max-w-screen-lg mx-auto my-10">
-            <div className="carousel">
+            <div className="carousel mx-3 md:mx-0">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src={bannerone} className="w-full" alt="Banner One" />
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
