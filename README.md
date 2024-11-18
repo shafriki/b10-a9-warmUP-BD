@@ -5,7 +5,7 @@
 
 
 ## Problem I Have Faced
-During the development of **WarmUP Bangladesh**, I faced challenges with Firebase authentication, as it was my first time integrating it. I also struggled with loading data and managing routes in React Router. Using Animate.css for animations presented difficulties, and working with new React npm packages added to the learning curve. Despite these obstacles, I successfully overcame them and completed the project, gaining valuable experience. Alhamdulillah.
+During the development of **WarmUP Bangladesh**, I faced challenges with Firebase authentication, as it was my first time integrating it. I also struggled with loading data and managing routes in React Router. Using AOS Package, Animate.css for animations presented difficulties, and working with new React npm packages added to the learning curve. Despite these obstacles, I successfully overcame them and completed the project, gaining valuable experience. Alhamdulillah.
 
 
 ## List of React and Firebase Fundamental concepts used in the WarmUP Bangladesh
@@ -48,6 +48,7 @@ During the development of **WarmUP Bangladesh**, I faced challenges with Firebas
 ## Npm packages Used
 - **react-icons**
 - **react-toastify**
+- **AOS Package**
 - **Animate.css**
 - **react-marquee**
 

@@ -71,7 +71,7 @@ const WorkProcess = () => {
           data-aos="zoom-in" >
           {["Rajshahi", "Dhaka", "Barisal", "Chattagram", "Khulna"].map(
             (location, index) => (
-              <div key={index} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg" data-aos="fade-up"
+              <div key={index} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg" data-aos="flip-right"
                 data-aos-delay={600 + index * 100} >
                 <img src={
                     index === 0

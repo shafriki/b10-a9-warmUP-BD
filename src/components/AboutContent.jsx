@@ -12,7 +12,7 @@ const AboutContent = () => {
             data-aos="fade-up">
 
             {/* about text content */}
-            <div className="md:col-span-2 mx-3 md:mx-0" data-aos="fade-right"
+            <div className="md:col-span-2 mx-3 md:mx-0" data-aos="fade-up"
                 data-aos-delay="100">
 
                 <h3 className="text-[#E74C3C] font-semibold uppercase text-sm mb-2">

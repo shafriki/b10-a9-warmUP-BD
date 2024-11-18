@@ -33,7 +33,7 @@ const AboutUs = () => {
             <div className="absolute inset-0 bg-[#34495E] bg-opacity-60 flex justify-center items-center"
                 data-aos="zoom-in">
 
-                <h2 className="text-white text-2xl md:text-4xl font-bold text-center animate__animated animate__backInRight">
+                <h2 className="text-white text-2xl md:text-4xl font-bold text-center animate__animated animate__bounce">
                     WarmUP Bangladesh</h2>
             </div>
         </div>
