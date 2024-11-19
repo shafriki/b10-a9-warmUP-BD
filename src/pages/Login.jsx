@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Login = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
+    useEffect(() => {
+        document.title = "Login | WarmUP Bangladesh";
+    }, []);
+
     return (
         <div className="relative bg-cover bg-center min-h-screen" style={{ backgroundImage: "url('https://i.ibb.co/ZXjbcNm/kids-with-lap-e1694859942474.jpg')" }}>
 
             <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
             {/* login content */}
-            <div className="flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto h-screen px-4 md:px-0">
+            <div className="flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto h-screen px-4 md:px-0" data-aos="fade-down" data-aos-duration="1000">
 
                 {/* login content text */}
-                <div className="text-left text-white space-y-4 px-4 md:px-6 relative z-10 mb-8 md:mb-0">
+                <div className="text-left text-white space-y-4 px-4 md:px-6 relative z-10 mb-8 md:mb-0" data-aos="fade-down" data-aos-duration="1000">
                     <h1 className="text-3xl mt-3 md:mt-0 md:text-5xl font-bold text-white">
                         WarmUP <span className='text-green-500'>Bangl</span><span className='text-red-500'>adesh</span>
                     </h1>
@@ -26,7 +36,7 @@ const Login = () => {
                 </div>
 
                 {/* login form */}
-                <div className="relative z-10 flex items-center justify-center w-full md:w-auto mb-10 md:mb-0">
+                <div className="relative z-10 flex items-center justify-center w-full md:w-auto mb-10 md:mb-0" data-aos="fade-down" data-aos-duration="1000">
 
                     <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 w-full sm:w-80 md:w-96">
 

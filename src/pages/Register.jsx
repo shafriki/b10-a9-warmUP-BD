@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Register = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
+    useEffect(() => {
+        document.title = "Register | WarmUP Bangladesh";
+    }, []);
+
     return (
         <div className="relative bg-cover bg-center min-h-screen" style={{ backgroundImage: "url('https://i.ibb.co.com/tqyftPB/Sweater-03.jpg')" }}>
 
@@ -11,7 +22,7 @@ const Register = () => {
             <div className="flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto min-h-screen px-4 md:px-0 py-8">
 
                 {/* register content text */}
-                <div className="text-left text-white space-y-4 px-4 md:px-6 relative z-10 mb-8 md:mb-0">
+                <div className="text-left text-white space-y-4 px-4 md:px-6 relative z-10 mb-8 md:mb-0" data-aos="fade-up">
                     <h1 className="text-3xl mt-3 md:mt-0 md:text-5xl font-bold text-white">
                         WarmUP <span className='text-green-500'>Bangl</span><span className='text-red-500'>adesh</span>
                     </h1>
@@ -25,7 +36,7 @@ const Register = () => {
                 </div>
 
                 {/* register form */}
-                <div className="relative z-10 flex items-center justify-center w-full md:w-auto mb-10 md:mb-0">
+                <div className="relative z-10 flex items-center justify-center w-full md:w-auto mb-10 md:mb-0" data-aos="zoom-in-up" data-aos-delay="200">
 
                     <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 w-full sm:w-80 md:w-96">
 
