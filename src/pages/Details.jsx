@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { HiStatusOnline } from "react-icons/hi";
 import { FaPhoneVolume, FaTreeCity } from "react-icons/fa6";
+import Form from '../components/Form';
 
 const Details = () => {
     const details = useLoaderData();
@@ -21,14 +22,16 @@ const Details = () => {
     }
 
     const handleDonateClick = () => {
-        if (detail.status === 'Completed') {
+        if (detail.status !== 'Completed') {
+            document.getElementById('donation-form').scrollIntoView({ behavior: 'smooth' });
         }
     };
 
     return (
-        <div>
+        <div className='bg-[#F0F8FF]'>
+
             {/* detail info banner */}
-            <div className="relative bg-cover bg-center bg-no-repeat text-white mb-10"
+            <div className="relative bg-cover bg-center h-[25rem] bg-no-repeat text-white mb-10"
                 style={{
                     backgroundImage: `url('https://i.ibb.co.com/9qPTrDH/a02.jpg')`, }}
                 data-aos="fade-up">
@@ -39,8 +42,8 @@ const Details = () => {
             </div>
 
             {/* details card */}
-            <div className='mx-3 md:mx-0'>
-                <div className="card lg:card-side shadow-xl max-w-screen-lg mx-auto mb-10 bg-green-50">
+            <div className='mx-3 md:mx-0 md:absolute md:right-[16rem] md:top-[14rem]'>
+                <div className="card lg:card-side shadow-xl max-w-screen-lg mx-auto mb-10 bg-green-100">
                     <figure>
                         <img
                             src={detail.image} className='w-[20rem] md:w-[30rem]'
@@ -48,19 +51,23 @@ const Details = () => {
                     </figure>
                     <div className="p-5 md:w-1/2">
                         <h2 className="card-title">{detail.title}</h2>
-                        <p className='text-justify text-sm md:text-lg my-3'>{detail.description}</p>
+                        <p className='text-justify text-sm md:text-base my-5'>{detail.description}</p>
                         <div>
                             <p className={`my-2 ${getStatusColor(detail.status)}`}><HiStatusOnline className="inline-block mr-2 text-lg" />{detail.status}</p>
                             <p><FaPhoneVolume className="text-blue-600 inline-block mr-2" /> {detail.contactInfo}</p>
                             <p className='my-2'><FaTreeCity className="text-green-600 text-lg inline-block mr-2" />{detail.division}</p>
-                            <button id='donate' className='bg-[#34495E] text-white px-6 py-2 rounded-md hover:bg-green-600 focus:outline-none w-full btn md:mt-[8rem]' disabled={detail.status === 'Completed'}
-                            onClick={detail.status !== 'Completed' ? handleDonateClick : null}> Donate Now </button>
+                            <button id='donate' className='bg-[#34495E] text-white px-6 py-2 rounded-md hover:bg-green-600 focus:outline-none w-full btn md:mt-[9rem]' disabled={detail.status === 'Completed'}
+                            onClick={handleDonateClick}> Donate Now </button>
                         </div>
-                        
+
                         <div className="card-actions justify-end">
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div id="donation-form">
+                <Form />
             </div>
         </div>
     );
