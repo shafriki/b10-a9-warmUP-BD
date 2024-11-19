@@ -1,7 +1,4 @@
 import React from 'react';
-// import bannerone from '../assets/banner-1.png';
-// import bannertwo from '../assets/banner-2.png';
-// import bannerthree from '../assets/banner-3.png';
 const Banner = () => {
     return (
         <div className="max-w-screen-lg mx-auto my-10">
