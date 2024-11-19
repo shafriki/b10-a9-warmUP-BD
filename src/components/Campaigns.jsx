@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom'; 
 import { HiStatusOnline } from "react-icons/hi";
 import { FaPhoneVolume, FaTreeCity } from "react-icons/fa6";
 import AOS from "aos";
@@ -7,14 +7,18 @@ import "aos/dist/aos.css";
 
 const Campaigns = () => {
   const campaigns = useLoaderData();
-
   const [toggledState, setToggledState] = useState({});
+  const navigate = useNavigate(); 
 
   const handleToggle = (id) => {
     setToggledState((prevState) => ({
       ...prevState,
       [id]: !prevState[id],
     }));
+  };
+
+  const handleDonateNow = (id) => {
+    navigate(`/details/${id}`); 
   };
 
   useEffect(() => {
@@ -66,7 +70,6 @@ const Campaigns = () => {
                       ? "text-red-500"
                       : "text-gray-500" 
                   }`}>
-
                   <HiStatusOnline className="inline-block mr-2 text-lg" />
                   {campaign.status}
                 </span>
@@ -83,7 +86,9 @@ const Campaigns = () => {
               </p>
 
               <div className="mt-4 text-center p-4">
-                <button className="bg-[#34495E] text-white px-6 py-2 rounded-md hover:bg-green-600 focus:outline-none w-full btn">
+                <button
+                  onClick={() => handleDonateNow(campaign.id)} 
+                  className="bg-[#34495E] text-white px-6 py-2 rounded-md hover:bg-green-600 focus:outline-none w-full btn">
                   Donate Now
                 </button>
               </div>

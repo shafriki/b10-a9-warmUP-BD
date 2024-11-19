@@ -1,12 +1,14 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import ErrorPage from "../pages/ErrorPage";
 import MainLayout from "../layouts/MainLayout";
-import Home from '../pages/Home'
+import Home from '../pages/Home';
 import Donation from "../pages/Donation";
 import Help from "../pages/Help";
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Details from "../pages/Details";
+import PrivateRoute from "./PrivateRoute";
 
 const Routes = createBrowserRouter([
   {
@@ -20,7 +22,7 @@ const Routes = createBrowserRouter([
       },
       {
         path: '/home',
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: '/donation',
@@ -29,22 +31,39 @@ const Routes = createBrowserRouter([
       },
       {
         path: '/help',
-        element: <Help></Help>,
+        element: (
+          <PrivateRoute>
+            <Help></Help>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/login',
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: '/register',
-        element: <Register></Register>
+        element: <Register></Register>,
       },
-    ]
-  }
+      {
+        path: '/details/:id',
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: () => fetch('/Campaigns.json'),
+      },
+    ],
+  },
 ]);
 
 export default Routes;
