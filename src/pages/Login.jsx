@@ -1,67 +1,192 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { AuthContext } from "../providers/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; 
+import { FaEye, FaEyeSlash } from "react-icons/fa";  toggle
 
 const Login = () => {
-    useEffect(() => {
-        AOS.init();
-    }, []);
+  const { loginUser, googlePopup } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false); visibility
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        document.title = "Login | WarmUP Bangladesh";
-    }, []);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
-    return (
-        <div className="relative bg-cover bg-center min-h-screen" style={{ backgroundImage: "url('https://i.ibb.co/ZXjbcNm/kids-with-lap-e1694859942474.jpg')" }}>
+  useEffect(() => {
+    document.title = "Login | WarmUP Bangladesh";
+  }, []);
 
-            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
-            {/* login content */}
-            <div className="flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto h-screen px-4 md:px-0" data-aos="fade-down" data-aos-duration="1000">
+    if (!email || !password) {
+      toast.error("Please fill all fields.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+      });
+      return;
+    }
 
-                {/* login content text */}
-                <div className="text-left text-white space-y-4 px-4 md:px-6 relative z-10 mb-8 md:mb-0" data-aos="fade-down" data-aos-duration="1000">
-                    <h1 className="text-3xl mt-3 md:mt-0 md:text-5xl font-bold text-white">
-                        WarmUP <span className='text-green-500'>Bangl</span><span className='text-red-500'>adesh</span>
-                    </h1>
+    try {
+      await loginUser(email, password);
+      toast.success("Login successful", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+      });
 
-                    <p className="text-sm md:text-xl font-bold text-green-400">Your Generosity, Their Warmth</p>
+      setTimeout(() => {
+        navigate("/"); 
+      }, 1000); 
+    } catch (err) {
+      toast.error("Login failed. Check Password", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+      });
+    }
+  };
 
-                    <p className="text-xs md:text-base text-white text-justify">
-                        <span className='text-xl text-red-500 font-bold'>"</span>Your donation to WarmUp Bangladesh brings warmth to those in need. Together, we can ease winter hardships by providing clothes to the homeless. Join us in spreading comfort and hope this winter.<span className='text-xl text-red-500 font-bold'>"</span>
-                    </p>
+  const handleGoogleSignIn = async () => {
+    try {
+      await googlePopup();
+      toast.success("Logged in with Google", { position: "top-center" });
+      setTimeout(() => navigate("/"), 1500); 
+    } catch (err) {
+      toast.error(err.message || "Google sign-in failed.", {
+        position: "top-center",
+      });
+    }
+  };
 
-                </div>
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible); 
+  };
 
-                {/* login form */}
-                <div className="relative z-10 flex items-center justify-center w-full md:w-auto mb-10 md:mb-0" data-aos="fade-down" data-aos-duration="1000">
-
-                    <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 w-full sm:w-80 md:w-96">
-
-                        <h2 className="text-white text-xl md:text-2xl font-semibold text-center mb-4">Login</h2>
-                        <form className="flex flex-col">
-                            <label htmlFor="email" className="text-white text-sm mb-2">Email</label>
-                            <input type="email" id="email" placeholder="Enter your email"
-                                className="p-3 mb-4 rounded-lg bg-gray-400 bg-opacity-50 text-black focus:outline-none w-full"/>
-
-                            <label htmlFor="password" className="text-white text-sm mb-2">Password</label>
-                            <input type="password" id="password" placeholder="Enter your password" className="p-3 mb-1 rounded-lg bg-gray-400 bg-opacity-50 text-black focus:outline-none w-full"/>
-
-                            <Link className='text-gray-200 mb-4 hover:text-blue-500 text-sm'>Forget Password?</Link>
-
-                            <button type="submit" className="bg-green-600 btn border-none text-white rounded-lg hover:bg-green-500 transition duration-300 w-full">Login</button>
-
-                            <button type="submit" className="bg-blue-600 btn border-none text-white rounded-lg hover:bg-blue-500 transition duration-300 mt-2 flex items-center justify-center gap-2 w-full"> <FcGoogle className='text-2xl' />Login With Google </button>
-
-                            <p className='text-gray-200 text-center text-sm mt-1'>Don't have an account? <Link to='/register' className='text-blue-300 font-medium hover:text-green-400'>Register</Link> </p>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div
+      className="relative bg-cover bg-center min-h-screen"
+      style={{
+        backgroundImage: "url('https://i.ibb.co/ZXjbcNm/kids-with-lap-e1694859942474.jpg')",
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+      <div
+        className="flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto h-screen px-4 md:px-0"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+      >
+        {/* Login content */}
+        <div
+          className="text-left text-white space-y-4 px-4 md:px-6 relative z-10 mb-8 md:mb-0"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
+          <h1 className="text-3xl mt-3 md:mt-0 md:text-5xl font-bold text-white">
+            WarmUP <span className="text-green-500">Bangl</span>
+            <span className="text-red-500">adesh</span>
+          </h1>
+          <p className="text-sm md:text-xl font-bold text-green-400">Your Generosity, Their Warmth</p>
+          <p className="text-xs md:text-base text-white text-justify">
+            <span className="text-xl text-red-500 font-bold">"</span>Your
+            donation to WarmUp Bangladesh brings warmth to those in need.
+            Together, we can ease winter hardships by providing clothes to the
+            homeless. Join us in spreading comfort and hope this winter.
+            <span className="text-xl text-red-500 font-bold">"</span>
+          </p>
         </div>
-    );
+        {/* Login form */}
+        <div
+          className="relative z-10 flex items-center justify-center w-full md:w-auto mb-10 md:mb-0"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
+          <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 w-full sm:w-80 md:w-96">
+            <h2 className="text-white text-xl md:text-2xl font-semibold text-center mb-4">Login</h2>
+            <form onSubmit={handleLogin} className="flex flex-col">
+              <label htmlFor="email" className="text-white text-sm mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                className="p-3 mb-4 rounded-lg bg-gray-400 bg-opacity-50 text-black focus:outline-none w-full"
+              />
+              <label htmlFor="password" className="text-white text-sm mb-2">
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  type={passwordVisible ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  className="p-3 mb-1 rounded-lg bg-gray-400 bg-opacity-50 text-black focus:outline-none w-full"
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xl text-black"
+                >
+                  {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+              {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+              <Link
+                className="text-gray-200 mb-4 hover:text-blue-500 text-sm"
+                to="/forgot-password"
+              >
+                Forget Password?
+              </Link>
+              <button
+                type="submit"
+                className="bg-green-600 btn border-none text-white rounded-lg hover:bg-green-500 transition duration-300 w-full"
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                className="bg-blue-600 btn border-none text-white rounded-lg hover:bg-blue-500 transition duration-300 mt-2 flex items-center justify-center gap-2 w-full"
+              >
+                <FcGoogle className="text-2xl" />
+                Login with Google
+              </button>
+              <p className="text-gray-200 text-center text-sm mt-1">
+                Don’t have an account?{" "}
+                <Link
+                  to="/register"
+                  className="text-blue-300 font-medium hover:text-green-400"
+                >
+                  Register
+                </Link>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <ToastContainer />
+    </div>
+  );
 };
 
 export default Login;

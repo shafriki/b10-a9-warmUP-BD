@@ -8,7 +8,6 @@ import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 
-// Update your routes to include loader for '/donation'
 const Routes = createBrowserRouter([
   {
     path: '/',
@@ -25,8 +24,8 @@ const Routes = createBrowserRouter([
       },
       {
         path: '/donation',
-        element: <Donation />,
-        loader: () => fetch('/Campaigns.json').then(res => res.json()), // Fetch and return data as JSON
+        element: <Donation></Donation>,
+        loader: () => fetch('/Campaigns.json').then(res => res.json()),
       },
       {
         path: '/help',
