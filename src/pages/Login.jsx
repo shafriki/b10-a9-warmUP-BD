@@ -6,12 +6,12 @@ import "aos/dist/aos.css";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; 
-import { FaEye, FaEyeSlash } from "react-icons/fa";  toggle
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 const Login = () => {
   const { loginUser, googlePopup } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const [passwordVisible, setPasswordVisible] = useState(false); visibility
+  const [passwordVisible, setPasswordVisible] = useState(false); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       await googlePopup();
-      toast.success("Logged in with Google", { position: "top-center" });
+      toast.success("Logged in with Google!", { position: "top-center" });
       setTimeout(() => navigate("/"), 1500); 
     } catch (err) {
       toast.error(err.message || "Google sign-in failed.", {
@@ -144,7 +144,7 @@ const Login = () => {
                 <button
                   type="button"
                   onClick={togglePasswordVisibility}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xl text-black"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xl text-gray-800"
                 >
                   {passwordVisible ? <FaEyeSlash /> : <FaEye />}
                 </button>
