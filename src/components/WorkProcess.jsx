@@ -10,7 +10,7 @@ const WorkProcess = () => {
   return (
     <div className="container mx-auto py-8 max-w-screen-xl" data-aos="fade-up">
 
-      <h2 className="text-[#34495E] text-3xl md:text-5xl font-bold mb-4 text-center"
+      <h2 className="text-[#34495E] text-2xl md:text-4xl font-bold mb-4 text-center"
         data-aos="zoom-in"> How It Works </h2>
       <p className="md:text-lg text-center mb-6 mx-1 text-sm" data-aos="fade-up"
         data-aos-delay="200">Join us in spreading warmth to those in need by donating winter clothing.
@@ -62,40 +62,42 @@ const WorkProcess = () => {
         </div>
       </div>
 
-      {/* Collection Points */}
+      {/* collection points */}
       <div className="mt-8 text-center" data-aos="fade-up" data-aos-delay="500">
-        <h3 className="text-2xl text-[#34495E] font-bold">Collection Points</h3>
+        <h3 className="text-2xl md:text-4xl text-[#34495E] font-bold">Collection Points</h3>
 
-        <div
-          className="grid grid-cols-2 md:grid-cols-5 gap-6 mt-6 mx-3"
-          data-aos="zoom-in" >
-          {["Rajshahi", "Dhaka", "Barisal", "Chattagram", "Khulna"].map(
-            (location, index) => (
-              <div key={index} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg" data-aos="flip-right"
-                data-aos-delay={600 + index * 100} >
-                <img src={
-                    index === 0
-                      ? "https://i.ibb.co.com/6X9MPKQ/Rajshahi.png"
-                      : index === 1
-                      ? "https://i.ibb.co.com/k3d6hsW/Dhaka.png"
-                      : index === 2
-                      ? "https://i.ibb.co.com/y8ykRGC/bari.png"
-                      : index === 3
-                      ? "https://i.ibb.co.com/zSdMHNf/chatt.png"
-                      : "https://i.ibb.co.com/3SjNSgK/khulna.png"
-                  }
-                  alt={location}
-                  className="w-full h-56 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"/>
-                <div className="absolute inset-0 bg-[#34495E] bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
-                <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                  <button className="bg-[#E74C3C] md:px-8 text-white btn rounded-none border-none">
-                    More
-                  </button>
-                </div>
-              </div>
-            )
-          )}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6 mx-3" data-aos="zoom-in"> {["Sylhet", "Rangpur", "Mymensingh", "Khulna", "Barisal", "Chattagram", "Dhaka", "Rajshahi"].map((location, index) => (<div key={index} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg"
+                  data-aos="flip-right" data-aos-delay={600 + index * 100}>
+                  <img src={
+                      index === 0
+                        ? "https://i.ibb.co.com/G7gjjXS/syl.png"
+                        : index === 1
+                        ? "https://i.ibb.co.com/5r74Nrt/rang.png"
+                        : index === 2
+                        ? "https://i.ibb.co.com/12rWcq8/my.png"
+                        : index === 3
+                        ? "https://i.ibb.co.com/VNn5rXy/khu.png"
+                        : index === 4
+                        ? "https://i.ibb.co.com/5Tm4jyw/bar.png"
+                        : index === 5
+                        ? "https://i.ibb.co.com/D9mzQRQ/chat.png"
+                        : index === 6
+                        ? "https://i.ibb.co.com/gt6WXrd/dha.png"
+                        : "https://i.ibb.co.com/TPZ86Pg/raj.png"
+                    }
+                    alt={location}
+                    className="w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"/>
+
+                  <div className="absolute inset-0 bg-[#34495E] bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
+
+                  <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                    <button className="bg-[#E74C3C] md:px-8 text-white btn rounded-none border-none">More</button>
         </div>
+      </div>
+    )
+  )}
+</div>
+
       </div>
     </div>
   );
