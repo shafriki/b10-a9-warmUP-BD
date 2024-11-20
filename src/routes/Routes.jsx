@@ -10,6 +10,7 @@ import Register from "../pages/Register";
 import Details from "../pages/Details";
 import PrivateRoute from "./PrivateRoute";
 import Update from "../pages/Update";
+import ForgetPass from "../pages/ForgetPass";
 
 const Routes = createBrowserRouter([
   {
@@ -65,7 +66,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: '/update',
-        element: <Update></Update>
+        element: <Update></Update>,
+      },
+      {
+        path: '/forget',
+        element: <ForgetPass></ForgetPass>
       },
     ],
   },
