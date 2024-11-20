@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Profile from '../components/Profile';
 
 const Dashboard = () => {
 
@@ -8,7 +9,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            Dashboard
+            <Profile></Profile>
         </div>
     );
 };

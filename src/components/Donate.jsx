@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const Donate = () => {
   useEffect(() => {
@@ -29,7 +30,7 @@ const Donate = () => {
           need.
         </p>
 
-        <button className="mt-8 px-6 py-3 bg-green-600 text-white font-semibold text-xs md:text-lg rounded hover:bg-red-700 transition duration-300" data-aos="zoom-in" data-aos-delay="600" >DONATE NOW </button>
+        <Link to='/donation' className="btn  border-none mt-8 px-6 py-3 bg-green-600 text-white font-semibold text-xs md:text-lg rounded hover:bg-red-700 transition duration-300" data-aos="zoom-in" data-aos-delay="600" >DONATE NOW </Link>
       </div>
     </div>
   );
