@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Details from "../pages/Details";
 import PrivateRoute from "./PrivateRoute";
+import Update from "../pages/Update";
 
 const Routes = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch('/Campaigns.json'),
+      },
+      {
+        path: '/update',
+        element: <Update></Update>
       },
     ],
   },
