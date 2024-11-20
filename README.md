@@ -9,8 +9,8 @@ During the development of **WarmUP Bangladesh**, I faced challenges with Firebas
 
 
 ## List of React and Firebase Fundamental concepts used in the WarmUP Bangladesh
-1. **Nested React Router**
-2. **Link**
+1. **Firebase Auth**
+2. **Nested React Router**
 3. **Outlet**
 4. **Loader**
 5. **useLoaderData**
@@ -18,18 +18,18 @@ During the development of **WarmUP Bangladesh**, I faced challenges with Firebas
 7. **Use Location**
 8. **Context Creation**
 9. **Provider Component**
-10. **Firebase Auth**
+10. **Link**
 11. **React-Toastify**
 
 
-## Key Features of Gadget Heaven:
+## Key Features of WarmUP Bangladesh:
 1. **Single-Page Layout:**:  A smooth, single-page layout with seamless navigation between sections like Home, Donation Campaigns, How to Help, and Dashboard.
 
 2. **Authentication System:**: User login and registration with Firebase feature.
 
 3. **Donation Campaigns:**: Displays a list of donation campaigns with essential details (image, title, description, division, contact info), and allows users to donate.
 
-4. **Dashboard (Private Route):**: Users can view and update their profile information.
+4. **Dashboard (Private Route):**: Users can view, update and log out their profile information.
 
 5. **Donation Details Page:**: Accessible only after login, with a form to submit donations.
 
