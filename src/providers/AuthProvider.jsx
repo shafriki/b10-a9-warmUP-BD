@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { createContext, useState, useEffect } from "react";
 import { app } from "../firebase/firebase.config";
 
@@ -23,15 +23,21 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  const registerUser = async (email, password) => {
+  const registerUser = async (email, password, displayName, photoURL) => {
     setLoading(true);
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      setUser(userCredential.user);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const currentUser = userCredential.user;
+
+      // Update the user's profile (name and photo)
+      await updateProfile(currentUser, {
+        displayName: displayName,
+        photoURL: photoURL,
+      });
+
+      // Manually update the user state to reflect the changes
+      setUser({ ...currentUser, displayName, photoURL });
+
     } catch (error) {
       console.error("Registration Error:", error.message);
       throw error;
@@ -43,11 +49,7 @@ const AuthProvider = ({ children }) => {
   const loginUser = async (email, password) => {
     setLoading(true);
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       setUser(userCredential.user);
     } catch (error) {
       console.error("Login Error:", error.message);
@@ -81,7 +83,7 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     user,
     loading,
-    setLoading, 
+    setLoading,
     googlePopup,
     registerUser,
     loginUser,
