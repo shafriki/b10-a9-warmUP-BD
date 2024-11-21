@@ -1,6 +1,13 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { SiGooglestreetview } from "react-icons/si";
+import { FcDonate } from "react-icons/fc";
+import { TbTruckDelivery } from "react-icons/tb";
+import { IoReceiptSharp } from "react-icons/io5";
+
+
+
 
 const WorkProcess = () => {
   useEffect(() => {
@@ -10,55 +17,57 @@ const WorkProcess = () => {
   return (
     <div className="container mx-auto py-8 max-w-screen-xl" data-aos="fade-up">
 
-      <h2 className="text-[#34495E] text-2xl md:text-4xl font-bold mb-4 text-center"
-        data-aos="zoom-in"> How It Works </h2>
-      <p className="md:text-lg text-center mb-6 mx-1 text-sm" data-aos="fade-up"
+      <h2 className="text-[#34495E] text-3xl md:text-4xl font-bold mb-4 text-center"
+        data-aos="zoom-in">Works Process</h2>
+      <p className="md:text-base text-center mb-9 mx-1 text-xs" data-aos="fade-up"
         data-aos-delay="200">Join us in spreading warmth to those in need by donating winter clothing.
         Here's how you can get involved! </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up"
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-5" data-aos="fade-up"
         data-aos-delay="400">
 
         {/* text content */}
         <div className="md:col-span-2 mx-3 md:mx-0" data-aos="fade-up"
           data-aos-delay="600" >
 
-          <ul className="steps steps-vertical">
-            <li className="step step-primary">
-              Create an account or log in to access the donation campaigns.
-            </li>
+            {/* option-1 */}
+            <div className="flex items-center gap-4 border-2 px-2 py-2 md:w-[40rem] bg-blue-50 border-blue-300 rounded-md shadow-lg" >
+              <SiGooglestreetview className="text-5xl rounded-md p-1 border-2 text-teal-500 border-amber-500 shadow-lg"/>
+              <div> <p className="text-xs md:text-base">Explore active donation drives and specific clothing needs after logging in.</p></div>
+            </div>
+            {/* option-2 */}
+            <div className="flex items-center gap-4 border-2 px-2 py-2 md:w-[40rem] bg-blue-50 border-blue-300 rounded-md mt-2 shadow-lg">
+            <FcDonate className="text-5xl rounded-md p-1 border-2 text-teal-500 border-amber-500 shadow-lg"/>
 
-            <li className="step step-primary">
-              Choose the campaign that you want to contribute to
-            </li>
+              <div> <p className="text-xs md:text-base">Complete an easy form to donate winter clothing of various types and quantities.</p></div>
+            </div>
+            {/* option-3 */}
+            <div className="flex items-center gap-4 border-2 px-2 py-2 md:w-[40rem] bg-blue-50 border-blue-300 rounded-md mt-2 shadow-lg">
+            <TbTruckDelivery className="text-5xl rounded-md p-1 border-2 text-red-500 border-amber-500 shadow-lg"/>
 
-            <li className="step step-primary">
-              Tell us what clothes you are donating.
-            </li>
-
-            <li className="step step-primary">
-              Select the nearest location to drop off your donation.
-            </li>
-
-            <li className="step step-primary">
-              Submit your donation details and bring warmth to those in need.
-            </li>
-
-          </ul>
+              <div> <p className="text-xs md:text-base">Local volunteers collect, sort, and deliver donations to people in need.</p></div>
+            </div>
+            {/* option-4 */}
+            <div className="flex items-center gap-4 border-2 px-2 py-2 md:w-[40rem] bg-blue-50 border-blue-300 rounded-md mt-2 shadow-lg">
+              <IoReceiptSharp className="text-5xl rounded-md p-1 border-2 text-lime-500 border-amber-500 shadow-lg"/>
+              <div> <p className="text-xs md:text-base">Receive updates and confirmation when your donated items are collected and delivered.</p></div>
+            </div>
+            
+          
         </div>
 
         {/* image content */}
-        <div className="md:col-span-1 grid grid-cols-2 gap-4 mx-5 md:mx-0"
+        <div className="md:col-span-1 grid grid-cols-2 gap-1 md:gap-2 mx-3 md:mx-0"
           data-aos="fade-up" data-aos-delay="600">
           <img src="https://i.ibb.co.com/yW5nL5T/m1.jpg" alt="Image 1"
-            className="w-full h-48 object-cover" data-aos="zoom-in" data-aos-delay="700"/>
+            className="w-full md:h-48 object-cover rounded-md" data-aos="zoom-in" data-aos-delay="700"/>
 
-          <img src="https://i.ibb.co.com/hsZZq7C/m2.jpg" alt="Image 2" className="w-full h-48 object-cover" data-aos="zoom-in"
+          <img src="https://i.ibb.co.com/hsZZq7C/m2.jpg" alt="Image 2" className="w-full h-24 md:h-48 object-cover rounded-md" data-aos="zoom-in"
             data-aos-delay="800"/>
-          <img src="https://i.ibb.co.com/FxFfc9b/m3.jpg" alt="Image 3"  className="w-full h-48 object-cover" data-aos="zoom-in"
+          <img src="https://i.ibb.co.com/FxFfc9b/m3.jpg" alt="Image 3"  className="w-full h-24 md:h-48 object-cover rounded-md" data-aos="zoom-in"
             data-aos-delay="900"/>
           <img src="https://i.ibb.co.com/thbWxwQ/m4.jpg" alt="Image 4"
-            className="w-full h-48 object-cover" data-aos="zoom-in" data-aos-delay="1000" />
+            className="w-full h-24 md:h-48 object-cover rounded-md" data-aos="zoom-in" data-aos-delay="1000" />
         </div>
       </div>
 

@@ -39,11 +39,7 @@ const Update = () => {
         <div className="min-h-screen">
 
             {/* update info banner */}
-            <div
-                className="relative bg-cover bg-center h-[16rem] bg-no-repeat text-white"
-                style={{
-                    backgroundImage: `url('https://i.ibb.co/9qPTrDH/a02.jpg')`,
-                }} data-aos="fade-up">
+            <div className="relative bg-cover bg-center h-[16rem] bg-no-repeat text-white" style={{ backgroundImage: `url('https://i.ibb.co/9qPTrDH/a02.jpg')`,}} data-aos="fade-up">
 
                 <div className="bg-black/70 w-full h-full absolute top-0 left-0"
                     data-aos="fade" data-aos-delay="100"></div>

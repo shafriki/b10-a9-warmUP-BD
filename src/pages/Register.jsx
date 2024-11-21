@@ -166,13 +166,9 @@ const Register = () => {
 
             </div>
 
-              <Link
-                className="text-gray-200 mb-4 hover:text-blue-500 text-sm"
-                to="/forgot-password">
-                Forget Password?
-              </Link>
 
-              <button type="submit" className="bg-green-600 btn border-none text-white rounded-lg hover:bg-green-500 transition duration-300 w-full" >
+
+              <button type="submit" className="bg-green-600 mt-4 btn border-none text-white rounded-lg hover:bg-green-500 transition duration-300 w-full" >
                 Register </button>
 
               <button type="button" onClick={handleGoogleSignIn}

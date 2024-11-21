@@ -31,7 +31,7 @@ const Details = () => {
         <div className='bg-[#F0F8FF]'>
 
             {/* detail info banner */}
-            <div className="relative bg-cover bg-center h-[25rem] bg-no-repeat text-white mb-10"
+            <div className="relative bg-cover bg-center md:h-[25rem] bg-no-repeat text-white mb-10"
                 style={{
                     backgroundImage: `url('https://i.ibb.co.com/9qPTrDH/a02.jpg')`, }}
                 data-aos="fade-up">

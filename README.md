@@ -46,6 +46,7 @@ During the development of **WarmUP Bangladesh**, I faced challenges with Firebas
 
 
 ## Npm packages Used
+- **Swiper Slider**
 - **react-icons**
 - **react-toastify**
 - **AOS Package**

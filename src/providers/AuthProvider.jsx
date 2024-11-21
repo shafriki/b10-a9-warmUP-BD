@@ -29,13 +29,11 @@ const AuthProvider = ({ children }) => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const currentUser = userCredential.user;
 
-      // Update the user's profile (name and photo)
       await updateProfile(currentUser, {
         displayName: displayName,
         photoURL: photoURL,
       });
 
-      // Manually update the user state to reflect the changes
       setUser({ ...currentUser, displayName, photoURL });
 
     } catch (error) {

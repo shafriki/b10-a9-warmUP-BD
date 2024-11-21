@@ -22,7 +22,7 @@ const AboutUs = () => {
             <div className="grid grid-cols-5 gap-0 mt-20">
 
                 {images.map((img, index) => (
-                    <div key={index} className="h-48 md:h-52" data-aos="fade-up"
+                    <div key={index} className="h-40 md:h-52" data-aos="fade-up"
                         data-aos-delay={index * 100}>
 
                         <img src={img} alt=''className="w-full h-full object-cover" />

@@ -8,37 +8,14 @@ const NavBar = () => {
 
     const links = (
         <>
-            <NavLink 
-                to='/home' 
-                className={({ isActive }) => 
-                    isActive ? 'font-bold text-[#E74C3C]' : 'text-[#ECF0F1]'
-                }
-            >
-                Home
+            <NavLink to='/home' className={({ isActive }) => isActive ? 'font-bold text-[#E74C3C]' : 'text-[#ECF0F1]'}>Home </NavLink>
+
+            <NavLink to='/donation' className={({ isActive }) => isActive ? 'font-bold text-[#E74C3C]' : 'text-[#ECF0F1]'}> Donation Campaigns
             </NavLink>
-            <NavLink 
-                to='/donation' 
-                className={({ isActive }) => 
-                    isActive ? 'font-bold text-[#E74C3C]' : 'text-[#ECF0F1]'
-                }
-            >
-                Donation Campaigns
-            </NavLink>
-            <NavLink 
-                to='/help' 
-                className={({ isActive }) => 
-                    isActive ? 'font-bold text-[#E74C3C]' : 'text-[#ECF0F1]'
-                }
-            >
-                How to Help
-            </NavLink>
-            <NavLink 
-                to='/dashboard' 
-                className={({ isActive }) => 
-                    isActive ? 'font-bold text-[#E74C3C]' : 'text-[#ECF0F1]'
-                }
-            >
-                Dashboard
+
+            <NavLink to='/help' className={({ isActive }) => isActive ? 'font-bold text-[#E74C3C]' : 'text-[#ECF0F1]'}>How to Help</NavLink>
+
+            <NavLink to='/dashboard' className={({ isActive }) => isActive ? 'font-bold text-[#E74C3C]' : 'text-[#ECF0F1]'}>Dashboard
             </NavLink>
         </>
     );

@@ -15,7 +15,7 @@ const More = () => {
       <div className="flex flex-col items-center mt-10 mb-2">
             <h3 className="text-center text-[#34495E] text-2xl md:text-4xl font-bold mb-4"> More Donation Campaigns </h3>
 
-            <p className="text-center md:w-3/5 text-gray-700 text-sm md:text-base mb-6 mx-3 md:mx-0">"At WarmUp Bangladesh, we not only focus on addressing the immediate needs during the winter, but also extend our support through various other social initiatives."
+            <p className="text-center md:w-3/5 text-gray-700 text-xs md:text-base mb-6 mx-3 md:mx-0">At WarmUp Bangladesh, we not only focus on addressing the immediate needs during the winter, but also extend our support through various other social initiatives.
             </p>
       </div>
 
@@ -52,8 +52,7 @@ const More = () => {
         {/* card two */}
         <div
           className="card card-compact bg-blue-50 shadow-xl rounded-none"
-          data-aos="fade-up"
-        >
+          data-aos="fade-up">
           <figure>
             <img src="https://i.ibb.co.com/7R4yw46/water.webp"
               alt="Water and Sanitization"/>

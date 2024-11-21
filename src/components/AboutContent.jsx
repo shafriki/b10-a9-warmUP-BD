@@ -8,17 +8,18 @@ const AboutContent = () => {
     }, []);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 max-w-screen-xl mx-auto py-12 md:py-20 gap-5 md:gap-10"
+        <div className='bg-blue-50'>
+            <div className="grid grid-cols-1 md:grid-cols-3 max-w-screen-xl mx-auto py-12 md:py-20 gap-5 md:gap-10"
             data-aos="fade-up">
 
             {/* about text content */}
             <div className="md:col-span-2 mx-3 md:mx-0" data-aos="fade-up"
                 data-aos-delay="100">
 
-                <h3 className="text-[#E74C3C] font-semibold uppercase text-sm mb-2">
+                <h3 className="text-green-500 font-semibold uppercase text-sm mb-2">
                     Your Generosity, Their Warmth</h3>
 
-                <h2 className="text-[#34495E] text-3xl md:text-5xl font-bold mb-4">
+                <h2 className="text-[#34495E] text-3xl md:text-4xl font-bold mb-4">
                     About Us</h2>
 
                 <p className="text-gray-700 text-sm md:text-base mb-6 text-justify">
@@ -32,12 +33,12 @@ const AboutContent = () => {
                     and other community support initiatives. Together, we can make a difference
                     in the lives of vulnerable people.</p>
 
-                <button className="btn bg-[#34495E] text-white text-xs md:text-sm border-none hover:bg-[#E74C3C]"
+                <button className="btn bg-blue-500 text-white text-xs md:text-sm border-none hover:bg-blue-600"
                     data-aos="zoom-in"> Organization Info</button>
             </div>
 
             {/* about count */}
-            <div className="stats stats-horizontal md:stats-vertical shadow-none text-[#34495E]"
+            <div className="stats stats-horizontal md:stats-vertical shadow-none text-[#34495E] bg-blue-50"
                 data-aos="fade-up" data-aos-delay="200">
 
                 <div className="stat" data-aos="zoom-in" data-aos-delay="300">
@@ -55,6 +56,7 @@ const AboutContent = () => {
                     <div className="stat-desc">Funds We Collected</div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

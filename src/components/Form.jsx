@@ -27,7 +27,7 @@ const Form = () => {
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row space-x-0 md:space-x-10 p-10 mt-[20rem] bg-cover bg-center"
+    <div className="relative flex flex-col md:flex-row space-x-0 md:space-x-10 p-10 mt-7 md:mt-[20rem] bg-cover bg-center"
       style={{ backgroundImage: 'url(https://i.ibb.co.com/tqyftPB/Sweater-03.jpg)' }}>
       <div className="absolute inset-0 bg-black opacity-70"></div> 
       <div className="relative w-full md:w-1/3 flex flex-col justify-center z-10 mb-8 md:mb-0">
