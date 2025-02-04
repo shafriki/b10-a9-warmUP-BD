@@ -53,6 +53,16 @@ During the development of **WarmUP Bangladesh**, I faced challenges with Firebas
 - **Animate.css**
 - **react-marquee**
 
+## Installation
+- Ensure you have Node.js, npm or yarn, and Git installed.
+- Clone the repository: git clone https://github.com/shafriki/b10-a9-warmUP-BD.git
+- cd b10-a9-warmUP-BD file
+- Install dependencies: npm install
+- Set up frontend environment variables (Firebase config): Create a .env file 
+- Run the frontend: npm run dev
+
+### Video Walkthrough
+[![Watch the video](https://img.youtube.com/vi/0aoPDbOkxww/0.jpg)](https://www.youtube.com/watch?v=0aoPDbOkxww)
 
 ## Live Link
 [Click here to view live project](https://shafriki-warmup-bd.surge.sh/)
